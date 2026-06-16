@@ -8,7 +8,7 @@ body {
   margin-right: auto;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  flex-direction: column;
   padding: 10vh 10vh 10vh 10vh;
   
   
@@ -30,11 +30,11 @@ body {
   font-style: normal;  
   font-size: 3.5vh;
   text-align: center;
-  width: 42vh;
+  width: 100%vh;
 }
 
 .business-card {
-  width: 42vh;
+  width: 40vh;
   background-color: white;
   text-align: center;
   font-size: 16px;
@@ -46,15 +46,16 @@ body {
   box-shadow: 0 0 0 rgba(0, 0, 0, 1);
   padding: 2vh;
   transition: transform 0.15s, box-shadow 0.15s;
+  transform: scale(0.8 );
 }
 
 .business-card:hover {
-  transform: translate(-2px, -2px);
+  transform: translate(-2vh, -2vh) scale(0.82);
   box-shadow: 0.75vh 0.75vh 0 rgba(60, 190, 252, 1);
 }
 
 .profile-image {
-  width: 41.5vh;
+  width: 38vh;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease-in-out;
