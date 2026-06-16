@@ -1,0 +1,173 @@
+main {
+  overflow-wrap: break-word;
+}
+
+body {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10vh 1vh 10vh 1vh;
+  
+  
+  /*Background pattern*/
+  --dot-bg: black;
+  --dot-color: white;
+  --dot-size: 0.1vh;
+  --dot-space: 2vh;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+}
+
+.header {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;  
+  font-size: 3.5vh;
+  text-align: center;
+  width: 42vh;
+}
+
+.business-card {
+  width: 42vh;
+  background-color: white;
+  text-align: center;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  border: 0.5vh solid #261C15;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 1);
+  padding: 2vh;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.business-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 0.75vh 0.75vh 0 rgba(60, 190, 252, 1);
+}
+
+.profile-image {
+  width: 41.5vh;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+  border: 0.4vh solid #261C15;
+  box-shadow: 0 0 0 0;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.profile-image:active{
+  border-style: solid;
+}
+
+.profile-image:hover {
+  transform: translate(-0.5vh, -0.5vh);
+  box-shadow: 0.75vh 0.75vh 0 0;
+}
+
+#title {
+  border-style: solid;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 2vh;
+  padding: 1vh;
+}
+
+.personal-biodata {
+  background-color: #77e68a;
+}
+
+.personal-contact {
+  background-color: #fb83b3;
+}
+
+.personal-portfolio {
+  background-color: #ffad2a ;
+  margin-bottom: 3vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.email {
+  color: #261C15;
+}
+
+.email:hover {
+  transform: translate(-0.5vh, -0.5vh);
+  color:#fb83b3
+}
+
+.phone {
+  color: #261C15;
+}
+
+.phone:hover {
+  transform: translate(-0.5vh, -0.5vh);
+  color:#fb83b3
+}
+.portfolio-link {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 2vh;
+  text-decoration: none;
+  border-style: solid;
+  padding: 1vh;
+  margin-left: auto;
+  margin-right: auto;
+  color: #261C15;
+  transition: color 0.15s ease-in-out;
+  background-color: #ffad2a;
+  transition: transform 0.15s;
+
+}
+
+.portfolio-link:hover{
+  transform: translate(-0.5vh, -0.5vh);
+  color:#fb83b3
+}
+
+
+p {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 680;
+  font-style: normal;
+  font-size: 1.7vh;
+}
+
+.personal-social-media {
+  background-color: #3cbefc;
+  margin-top: 3vh;
+}
+
+.icon {
+  display: inline-block;
+  max-width: 20vh;
+  min-width: 6.5vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -1vh;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.icon:hover {
+  transform: translate(-0.25vh, -0.25vh);
+  fill: currentColor;
+  color:#fb83b3
+
+}
