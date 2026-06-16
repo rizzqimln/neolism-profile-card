@@ -4,7 +4,7 @@
 
 html, body {
   height: 100%;
-  display: flex;
+  display: inline-flex;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
