@@ -186,7 +186,7 @@ p {
 @media (orientation: portrait) {
   html {
     padding: 5vh 0;
-    overflow-y: auto;!important
+    overflow-y: auto;
   }
 
   body {
@@ -201,12 +201,12 @@ p {
 @media (orientation: portrait) {
   html {
     padding: 5vh 0;
-    overflow-y: auto;!important
+    overflow-y: auto;
   }
   
   body {
     padding: 5vh 0;
-    overflow-y: auto;!important
+    overflow-y: auto;
   }
 }
 
