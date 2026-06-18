@@ -1,7 +1,3 @@
-* {
-  touch-action: none;
-}
-
 html {  /*Background pattern*/
   --dot-bg: #121212;
   --dot-color: #faf9f6; 
