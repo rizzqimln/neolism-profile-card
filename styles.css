@@ -1,276 +1,347 @@
-html {  /*Background pattern*/
-  --dot-bg: #121212;
-  --dot-color: #faf9f6; 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap');
+
+*,*::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #121212;
+  --bg-card: #faf9f6;
+  --text: #121212;
+  --border: #202020;
+  --icon-bg: #202020;
+  --icon-moon: #faf9f6;
+  --icon-sun: #121212;
+  --icon-text: #faf9f6;
+  --accent-green: #77e68a;
+  --accent-pink: #fb83b3;
+  --accent-yellow: #ffad2a;
+  --accent-blue: #3cbefc;
+
+  --dot-bg: var(--bg-card);
+  --dot-color: var(--bg); 
   --dot-size: 1px;
   --dot-space: 16px;
+}
+
+.dark-mode {
+  --bg: #faf9f6;
+  --bg-card: #121212;
+  --text: #faf9f6;
+  --border: #e9e8e5;
+  --icon-bg: #faf9f6;
+  --icon-moon: #faf9f6;
+  --icon-sun: #121212;
+  --icon-text: #121212;
+  --accent-green: #46db5f;
+  --accent-pink: #ff67a4;
+  --accent-yellow: #ffa30e;
+  --accent-blue: #25b8fc;
+
+  --dot-bg: var(--bg-card);
+  --dot-color: var(--bg); 
+  --dot-size: 1px;
+  --dot-space: 16px;
+
+}
+
+/*MAIN COMPONENTS*/
+
+html, body {  
+  min-height: 100%;
+  transition: background 0.5s ease;
+}
+
+body {
 	background:
   linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
   linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
   var(--dot-color);
-  
-  *,*::before, *::after {
-    box-sizing: inherit;
-  }
-}
 
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  min-height: 100vh;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
   overflow-wrap: anywhere;
-}
-
-main {
-  width: 100%;
   display: flex;
-  flex: 1;
-  min-height: 100vh;
 }
 
 /*MAIN CARD COMPONENTS*/
 .business-card {
-  width: 100%;
-  max-width: 360px;
-  height: max-content;
-  margin: auto;
-  
-  background-color: #faf9f6;
+  background-color: var(--bg-card);
+  width: 85%;
+  max-width: 380px;
   text-align: center;
-  border: 3px solid #121212;
-  padding: 1.4rem;
+  margin: 1rem auto;
+  border: 3px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem;
   box-sizing: border-box;
-  transition: transform 0.15s, box-shadow 0.15s ease-in-out;
+  transition: transform 0.15s, box-shadow 0.15s ease-in-out, background-color 0.5s ease, border-color 0.5s ease;
 }
 
 .business-card:active {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0 0 rgba(60, 190, 252, 1);
+  transform: translate(-2px, -2px) ;
+  box-shadow: 8px 8px 0 0 var(--accent-blue);
 }
 
 .business-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0 0 rgba(60, 190, 252, 1);
+  transform: translate(-2px, -2px) ;
+  box-shadow: 8px 8px 0 0 var(--accent-blue);
 }
 
 /*TYPHOGRAPHY & ELEMENTS*/
 .header {
+  border-radius: 12px;
+  color: var(--text);
   font-family: "Syne", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
-  font-style: normal;  
-  text-align: center;
-  font-size: clamp(24px, 5vh, 32px);     
+  font-style: normal;   
   margin-top: -0.5vh;
   margin-bottom: 1.5rem;                                                                                                                                                                                                                                                                                                                                                                                                                  
 }
 
-.profile-image {
-  display: block;
-  margin: 0 auto 1.5rem auto;
+#theme {
   width: 100%;
-  max-width: 256px;
-  border: 4px solid #121212;
+  padding: 4px;
+  border-style: none;
+  background-color: var(--icon);
+  border-color: var(--border);
+  display: flex;
+  border-radius: 12px;
+  transition: transform 0.15s ;
+}
+
+#theme:active {
+  transform: translate(-2px -2px);
+}
+
+.theme-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  
+  align-items: center;
+  max-width: 100%;
+  min-width: 69px;
+  padding: 4px;
+  border-style: solid;
+  margin-right: auto;
+  background-color: var(--icon-bg);
+  color: var(--icon-text);
+  border-color: var(--border);
+  display: flex;
+  border-radius: 12px;
+}
+
+.theme-icon {
+  align-items: center;
+  padding: 4px;
+  border: 3px;
+  border-style: solid;
+  background-color: var(--icon);
+  border-color: var(--border);
+  display: flex;
+  border-radius: 12px;
+}
+
+.icon-moon {display: none;}
+.icon-sun {display: block; fill: currentColor; color: var(--icon-sun);}
+.dark-mode .icon-sun {display: none;}
+.dark-mode .icon-moon {display: block; fill: currentColor; color: var(--icon-moon);}
+
+.profile-image {
+  width: 100%;
+  margin: 0 auto 1.5rem auto;
+  border: 4px solid var(--border);
+  border-radius: 12px;
   box-sizing: border-box;
   transition: transform 0.15s, box-shadow 0.15s ease-in-out;
 }
 
 .profile-image:hover {
   transform: translate( -2px, -2px);
-  box-shadow: 8px 8px 0 0 rgba(60, 190, 252, 1);
+  box-shadow: 8px 8px 0 0 var(--accent-blue);
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .profile-image:active {
-      transform: translate(0px, -0px);
-      box-shadow: 0 0 0 0;
-    }
-  }
+.profile-image:active {
+  transform: translate(0px, 0px);
+  box-shadow: 0 0 0 0;
+}
 
-#title {
+ 
+.section-title {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
   font-size: 18px;
-  border: 3px solid #121212;
+  border: 3px solid var(--border);
+  border-radius: 12px;
   box-sizing: border-box;
 }
 
-#main-biodata, #main-contact  {
-  border: 3px solid #121212;
+
+.section-biodata, .section-contact  {
+  border: 3px solid var(--border);
+  border-radius: 12px;
   text-align:justify;
-  padding: 3px;
   box-sizing: border-box;
 }
 
-.biodata-title {background-color: #77e68a;}
-.contact-title {background-color: #fb83b3;}
-.portfolio-title {background-color: #ffad2a; margin-bottom: 18px;}
-.social-media-title {background-color: #3cbefc; margin-top: 18px;}
+.biodata-title {background-color: var(--accent-green);}
+.contact-title {background-color: var(--accent-pink);}
+.portfolio-title {background-color: var(--accent-yellow); margin-bottom: 18px;}
+.social-media-title {background-color: var(--accent-blue); margin-top: 18px;}
 
 a {
   text-decoration: none;
-  color: #121212;
-  transition: transform 0.15, color 0.15s;
+  color: var(--border);
+  transition: transform 0.15s ease-in-out ;
   display: inline-block;
 }
 
-
-.email, .phone {
-  margin-bottom: 10px;
-  color: #121212;
-  transition: transform 0.15s;
-}
-
-.email:hover, .phone:hover {
-  transform: translate(-2px, -2px);
-  color:#fb83b3
+a:hover {
+ transform: translate(-2px, -2px);
+ color:var(--accent-pink)
 }
 
 
 .portfolio-link {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 800;
-  border: 3px solid #121212;
+  border: 3px solid var(--border);
+  border-radius: 12px;
   font-size: 16px;
   padding: 6px 8px;
-  background-color: #ffad2a;
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-
-.portfolio-link:hover{
-  transform: translate(-2px, -2px);
-  border:3px solid #fb83b3;
-  color:#fb83b3;
+  transition: transform 0.1s, box-shadow 0.15s, background-color 0.1s;
 }
 
 .portfolio-link:visited{
-  border:3px solid #121212;
-  color: #121212;
+  transform: translate(0px, 0px);
+  border:3px solid var(--border);
 }
 
+.portfolio-link:hover{
+  background-color: var(--accent-yellow);
+  transform: translate(-2px, -2px);
+  border:3px solid var(--accent-pink);
+}
+
+
 p {
-  font-family: "Inter", sans-serif;
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 680;
+  font-weight: 640;
   font-style: normal;
-  padding: 2px;
-  box-sizing: border-box;
+  font-size: 14px;
+  padding: 6px;
+  margin-bottom: 6px;
+  margin-top: 6px;
 }
 
 .icon {
-  display: inline-block;
-  width: 44px;
-  margin: 10px 5px 0 5px;
-  transition: transform 0.15s ease-in-out, color 0.15s;
+  display: inline-flex;
+  margin-top: 12px;
+  width: 48px;
+  transition: transform 0.15s ease-in-out, color 0.15s ease;
   fill: currentColor;
-  color: #121212
+  color: var(--bg)
 }
 
 .icon:hover {
   transform: translate(-2px, -2px);
   fill: currentColor;
-  color:#fb83b3
-
+  color:var(--accent-pink)
 }
 
 /*Media Query*/
-   
-/* Desktop: Hide vertical overflow */
-@media (orientation: portrait) {
-  html {
-    padding: 5vh 0;
-    overflow-y: auto;
-  }
-
-  body {
-    padding: 5vh 0;
-    overflow-y: auto;
-  }
-}
-
-/*MEDIA QUERIES*/
-
-/* 1. Portrait (Phones/Vertical Screens): Add bumpers and natural scroll */
-@media (orientation: portrait) {
-  html {
-    padding: 5vh 0;
-    overflow-y: auto;
-  }
-  
-  body {
-    padding: 5vh 0;
-    overflow-y: auto;
-  }
-}
-
-/* 2. Standard Landscape (Desktop/Laptops): Safe 80% baseline */
-@media (min-width: 768px) and (orientation: landscape) {
-  html{
-    padding: 0;
-    overflow-y: auto; /* Locks the screen */
-  }
-  
-  body {
-    padding: 0;
-    overflow-y: auto; /* Locks the screen */
-  }
-  
+/* 2. Standard Landscape (Tablet): Safe 80% baseline */
+@media (min-width: 768px) {  
   .business-card {
-    max-width: 480px;
-    transform: scale(0.77); /* Shrink the 900px card to fit standard monitors */
+    max-width: 460px;
+    padding: 1.8rem;
   }
+  
   .business-card:hover {
-    transform: translate(-2px, -2px) scale(0.78);
+    transform: translate(-2px, -2px);
   }
 
   .portfolio-link {
-    font-size: 22px;
+    font-size: 16px;
   }
 
-  #title {
+  .section-title {
     font-size: 24px;
   }
 
   .icon {
-    margin-top: -8px;
-    width: 64px;
+    margin-bottom: -8px;
   }
   
   p {
+    font-size: 14px;
+  }
+}
+
+/* 2. Standard Landscape (Dekstop): Safe 80% baseline */
+@media (min-width: 1200px) { 
+  html {
+    flex: 0 0 auto;
+  } 
+
+   .business-card {
+    max-width: 500px;
+  }
+
+  .business-card:hover {
+    transform: translate(-2px, -2px);
+  }
+
+  .header {
+    font-size: 36px;
+  }
+  .portfolio-link {
     font-size: 20px;
   }
+
+  .section-title {
+    font-size: 24px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
 }
 
-/* 3. Short Monitors (Under 850px tall): Shrink to 70% */
-@media (min-width: 768px) and (orientation: landscape) and (max-height: 850px) {
+/* 
+
+@media (min-width: 768px) and (orientation: landscape){
   .business-card {
-    transform: scale(0.7); 
+    transform: scale(0.87); 
   }
   .business-card:hover {
-    transform: translate(-2px, -2px) scale(0.7);
+    transform: translate(-2px, -2px) scale(0.88);
   }
 }
 
-/* 4. Tiny Monitors (Under 700px tall): Shrink to 60% */
-@media (min-width: 768px) and (orientation: landscape) and (max-height: 700px) {
-  .business-card {
-    transform: scale(0.6);
+@media (min-width: 768px) and (orientation: landscape){
+  .business-card {  
+    transform: scale(0.79);
   }
   .business-card:hover {
-    transform: translate(-2px, -2px) scale(0.6);
+    transform: translate(-2px, -2px) scale(0.8);
   }
 }
 
 
-/*UNUSED QUERIES*/
-  /* 
+
+
   @media (min-width:767px) and (orientation: landscape) {
     html, body{
       padding: 0;
@@ -282,7 +353,7 @@ p {
   
     .business-card {
       max-width: min(450px, 85vh);
-      transform: scale(0.8);
+      transform: scale(0.8);AMAPIANO
     }
     .business-card:hover{
       transform: translate(-2px, -2px) scale(0.8);
