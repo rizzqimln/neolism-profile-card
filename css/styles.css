@@ -52,6 +52,7 @@
 html, body {  
   min-height: 100%;
   transition: background 0.5s ease;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
 }
 
 body {
@@ -79,20 +80,21 @@ body {
   margin: 1rem auto;
   border: 3px solid var(--border);
   border-radius: 12px;
-  padding: 1.2rem;
+  padding: 1.4rem;
   box-sizing: border-box;
-  transition: transform 0.15s, box-shadow 0.15s ease-in-out, background-color 0.5s ease, border-color 0.5s ease;
-}
-
-.business-card:active {
-  transform: translate(-2px, -2px) ;
-  box-shadow: 8px 8px 0 0 var(--accent-blue);
+  transition: transform 0.15s, box-shadow 0.15s, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .business-card:hover {
   transform: translate(-2px, -2px) ;
   box-shadow: 8px 8px 0 0 var(--accent-blue);
 }
+
+.business-card:active {
+  transform: translate(0px, 0px) ;
+  box-shadow: 0 0 0 0;
+}
+
 
 /*TYPHOGRAPHY & ELEMENTS*/
 .header {
@@ -106,22 +108,18 @@ body {
   margin-bottom: 1.5rem;                                                                                                                                                                                                                                                                                                                                                                                                                  
 }
 
-#theme {
+#btnMain {
   width: 100%;
   padding: 4px;
+  display: inline-flex;
   border-style: none;
   background-color: var(--icon);
   border-color: var(--border);
-  display: flex;
   border-radius: 12px;
   transition: transform 0.15s ;
 }
 
-#theme:active {
-  transform: translate(-2px -2px);
-}
-
-.theme-label {
+#btnMain .theme-label {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
@@ -131,23 +129,20 @@ body {
   min-width: 69px;
   padding: 4px;
   border-style: solid;
-  margin-right: auto;
   background-color: var(--icon-bg);
   color: var(--icon-text);
   border-color: var(--border);
   display: flex;
+  font-size: 16px;
   border-radius: 12px;
 }
 
-.theme-icon {
-  align-items: center;
-  padding: 4px;
-  border: 3px;
-  border-style: solid;
+.btn-icon {
+  margin: auto 0 auto auto;
+  justify-content: flex-end;
   background-color: var(--icon);
   border-color: var(--border);
-  display: flex;
-  border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .icon-moon {display: none;}
@@ -162,16 +157,6 @@ body {
   border-radius: 12px;
   box-sizing: border-box;
   transition: transform 0.15s, box-shadow 0.15s ease-in-out;
-}
-
-.profile-image:hover {
-  transform: translate( -2px, -2px);
-  box-shadow: 8px 8px 0 0 var(--accent-blue);
-}
-
-.profile-image:active {
-  transform: translate(0px, 0px);
-  box-shadow: 0 0 0 0;
 }
 
  
@@ -237,7 +222,10 @@ p {
   color: var(--text);
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 640;
+  font-weight: 640;   .business-card {
+    max-width: 480px;
+  }
+
   font-style: normal;
   font-size: 14px;
   padding: 6px;
@@ -247,7 +235,10 @@ p {
 
 .icon {
   display: inline-flex;
-  margin-top: 12px;
+  margin-top: 12px;   .business-card {
+    max-width: 480px;
+  }
+
   width: 48px;
   transition: transform 0.15s ease-in-out, color 0.15s ease;
   fill: currentColor;
@@ -261,15 +252,11 @@ p {
 }
 
 /*Media Query*/
-/* 2. Standard Landscape (Tablet): Safe 80% baseline */
+/* 1. Standard Landscape (Tablet): Safe 80% baseline */
 @media (min-width: 768px) {  
   .business-card {
-    max-width: 460px;
+    flex: 0 0 auto;
     padding: 1.8rem;
-  }
-  
-  .business-card:hover {
-    transform: translate(-2px, -2px);
   }
 
   .portfolio-link {
@@ -293,18 +280,15 @@ p {
 @media (min-width: 1200px) { 
   html {
     flex: 0 0 auto;
+    padding: 1.4rem;
   } 
 
    .business-card {
-    max-width: 500px;
-  }
-
-  .business-card:hover {
-    transform: translate(-2px, -2px);
+    max-width: 480px;
   }
 
   .header {
-    font-size: 36px;
+    font-size: 32px;
   }
   .portfolio-link {
     font-size: 20px;
