@@ -49,8 +49,9 @@
 
 /*MAIN COMPONENTS*/
 
-html, body {  
-  min-height: 100%;
+html, body { 
+  min-width: 80%; 
+  min-height: 80%;
   transition: background 0.5s ease;
   padding: 0.5rem 0.75rem 0.5rem 0.75rem;
 }
@@ -67,15 +68,14 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
-  overflow-wrap: anywhere;
   display: flex;
 }
 
 /*MAIN CARD COMPONENTS*/
 .business-card {
   background-color: var(--bg-card);
-  width: 95%;
-  max-width: 340px;
+  width: 90%;
+  max-width: 360px;
   text-align: center;
   justify-content: center;
   margin: 1rem auto;
@@ -98,6 +98,8 @@ body {
 
 /*TYPHOGRAPHY & ELEMENTS*/
 .header {
+  justify-content: center;
+  text-align: center;
   border-radius: 12px;
   color: var(--text);
   font-family: "Syne", sans-serif;
@@ -105,7 +107,8 @@ body {
   font-weight: 800;
   font-style: normal;   
   margin-top: -0.5vh;
-  margin-bottom: 1.5rem;           
+  margin-bottom: 1.5rem;     
+  display:flex;   
   
   -webkit-user-select: none; /* Safari and Chrome */
   -moz-user-select: none;    /* Firefox */
@@ -319,7 +322,6 @@ p {
 
    .business-card {
     max-width: 480px;  
-    width: 90%;
   }
 
   .header {
