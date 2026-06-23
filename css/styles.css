@@ -74,27 +74,27 @@ body {
 /*MAIN CARD COMPONENTS*/
 .business-card {
   background-color: var(--bg-card);
-  width: 85%;
-  max-width: 380px;
+  width: 95%;
+  max-width: 340px;
   text-align: center;
+  justify-content: center;
   margin: 1rem auto;
   border: 3px solid var(--border);
   border-radius: 12px;
   padding: 1.4rem;
   box-sizing: border-box;
-  transition: transform 0.15s, box-shadow 0.15s, background-color 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.15s ease-in-out, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .business-card:hover {
-  transform: translate(-2px, -2px) ;
-  box-shadow: 8px 8px 0 0 var(--accent-blue);
+  transform: translate(0px, 0px) ;
+  box-shadow: 0px 0px 0 0 ;
 }
 
 .business-card:active {
-  transform: translate(0px, 0px) ;
-  box-shadow: 0 0 0 0;
+  transform: translate(-2px, -2px) ;
+  box-shadow: 8px 8px 0 0 var(--accent-blue);
 }
-
 
 /*TYPHOGRAPHY & ELEMENTS*/
 .header {
@@ -105,7 +105,12 @@ body {
   font-weight: 800;
   font-style: normal;   
   margin-top: -0.5vh;
-  margin-bottom: 1.5rem;                                                                                                                                                                                                                                                                                                                                                                                                                  
+  margin-bottom: 1.5rem;           
+  
+  -webkit-user-select: none; /* Safari and Chrome */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 #btnMain {
@@ -151,14 +156,13 @@ body {
 .dark-mode .icon-moon {display: block; fill: currentColor; color: var(--icon-moon);}
 
 .profile-image {
-  width: 100%;
+  width: 80%;
   margin: 0 auto 1.5rem auto;
   border: 4px solid var(--border);
   border-radius: 12px;
   box-sizing: border-box;
   transition: transform 0.15s, box-shadow 0.15s ease-in-out;
 }
-
  
 .section-title {
   font-family: "Space Grotesk", sans-serif;
@@ -204,6 +208,10 @@ a:hover {
   font-size: 16px;
   padding: 6px 8px;
   transition: transform 0.1s, box-shadow 0.15s, background-color 0.1s;
+  
+  -webkit-user-drag: none; /* Safari and Chrome */
+  -moz-user-drag: none;    /* Firefox */
+  -ms-user-drag: none;     /* Internet Explorer/Edge */
 }
 
 .portfolio-link:visited{
@@ -222,10 +230,7 @@ p {
   color: var(--text);
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 640;   .business-card {
-    max-width: 480px;
-  }
-
+  font-weight: 640;
   font-style: normal;
   font-size: 14px;
   padding: 6px;
@@ -235,10 +240,7 @@ p {
 
 .icon {
   display: inline-flex;
-  margin-top: 12px;   .business-card {
-    max-width: 480px;
-  }
-
+  margin-top: 12px;
   width: 48px;
   transition: transform 0.15s ease-in-out, color 0.15s ease;
   fill: currentColor;
@@ -276,15 +278,43 @@ p {
   }
 }
 
-/* 2. Standard Landscape (Dekstop): Safe 80% baseline */
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) and (orientation: portrait){ 
   html {
     flex: 0 0 auto;
     padding: 1.4rem;
   } 
 
    .business-card {
-    max-width: 480px;
+    max-width: 480px;  
+    width: 90%;
+  }
+
+  .header {
+    font-size: 32px;
+  }
+  .portfolio-link {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+}
+
+/* 2. Standard Landscape (Dekstop): Safe 80% baseline */
+@media (min-width: 1200px) and (orientation: landscape) { 
+  html {
+    flex: 0 0 auto;
+    padding: 1.4rem;
+  } 
+
+   .business-card {
+    max-width: 480px;  
+    width: 90%;
   }
 
   .header {
