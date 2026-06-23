@@ -253,6 +253,10 @@ p {
   color:var(--accent-pink)
 }
 
+.behance {
+  margin-left: 6px;
+}
+
 /*Media Query*/
 /* 1. Standard Landscape (Tablet): Safe 80% baseline */
 @media (min-width: 768px) {  
