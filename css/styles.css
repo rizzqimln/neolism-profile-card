@@ -1,343 +1,378 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap');
 
-*,*::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /*COLORS COMPONENTS*/
-
 :root {
-  --bg: #121212;
-  --bg-card: #faf9f6;
-  --text: #121212;
-  --border: #202020;
-  --icon-bg: #202020;
-  --icon-moon: #faf9f6;
-  --icon-sun: #121212;
-  --icon-text: #faf9f6;
-  --accent-green: #77e68a;
-  --accent-pink: #fb83b3;
-  --accent-yellow: #ffad2a;
-  --accent-blue: #3cbefc;
+    --bg: #121212;
+    --bg-card: #faf9f6;
+    --text: #121212;
+    --border: #202020;
+    --icon-bg: #202020;
+    --icon-moon: #faf9f6;
+    --icon-sun: #121212;
+    --icon-text: #faf9f6;
+    --accent-green: #77e68a;
+    --accent-pink: #fb83b3;
+    --accent-yellow: #ffad2a;
+    --accent-blue: #3cbefc;
 
-  --dot-bg: var(--bg-card);
-  --dot-color: var(--bg); 
-  --dot-size: 1px;
-  --dot-space: 16px;
+    --dot-bg: var(--bg-card);
+    --dot-color: var(--bg);
+    --dot-size: 1px;
+    --dot-space: 16px;
 }
 
 .dark-mode {
-  --bg: #faf9f6;
-  --bg-card: #121212;
-  --text: #faf9f6;
-  --border: #e9e8e5;
-  --icon-bg: #faf9f6;
-  --icon-moon: #faf9f6;
-  --icon-sun: #121212;
-  --icon-text: #121212;
-  --accent-green: #46db5f;
-  --accent-pink: #ff67a4;
-  --accent-yellow: #ffa30e;
-  --accent-blue: #25b8fc;
+    --bg: #faf9f6;
+    --bg-card: #121212;
+    --text: #faf9f6;
+    --border: #e9e8e5;
+    --icon-bg: #faf9f6;
+    --icon-moon: #faf9f6;
+    --icon-sun: #121212;
+    --icon-text: #121212;
+    --accent-green: #46db5f;
+    --accent-pink: #ff67a4;
+    --accent-yellow: #ffa30e;
+    --accent-blue: #25b8fc;
 
-  --dot-bg: var(--bg-card);
-  --dot-color: var(--bg); 
-  --dot-size: 1px;
-  --dot-space: 16px;
-
+    --dot-bg: var(--bg-card);
+    --dot-color: var(--bg);
+    --dot-size: 1px;
+    --dot-space: 16px;
 }
 
 /*MAIN COMPONENTS*/
-
-html, body { 
-  min-width: 80%; 
-  min-height: 80%;
-  transition: background 0.5s ease;
-  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+html,
+body {
+    min-width: 80%;
+    min-height: 80%;
+    transition: background 0.5s ease;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
 }
 
 body {
-	background:
-  linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-  linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-  var(--dot-color);
+    background:
+        linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        var(--dot-color);
 
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    display: flex;
 }
 
 /*MAIN CARD COMPONENTS*/
 .business-card {
-  background-color: var(--bg-card);
-  width: 90%;
-  max-width: 360px;
-  text-align: center;
-  justify-content: center;
-  margin: 1rem auto;
-  border: 3px solid var(--border);
-  border-radius: 12px;
-  padding: 1.4rem;
-  box-sizing: border-box;
-  transition: transform 0.25s ease, box-shadow 0.15s ease-in-out, background-color 0.25s ease, border-color 0.25s ease;
+    background-color: var(--bg-card);
+    width: 90%;
+    max-width: 360px;
+    text-align: center;
+    justify-content: center;
+    margin: 1rem auto;
+    border: 3px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem;
+    box-sizing: border-box;
+    transition: transform 0.25s ease, box-shadow 0.15s ease-in-out, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .business-card:hover {
-  transform: translate(0px, 0px) ;
-  box-shadow: 0px 0px 0 0 ;
+    transform: translate(0px, 0px);
+    box-shadow: 0px 0px 0 0;
 }
 
 .business-card:active {
-  transform: translate(-2px, -2px) ;
-  box-shadow: 8px 8px 0 0 var(--accent-blue);
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 0 var(--accent-blue);
 }
 
 /*TYPHOGRAPHY & ELEMENTS*/
 .header {
-  justify-content: center;
-  text-align: center;
-  border-radius: 12px;
-  color: var(--text);
-  font-family: "Syne", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;   
-  margin-top: -0.5vh;
-  margin-bottom: 1.5rem;     
-  display:flex;   
-  
-  -webkit-user-select: none; /* Safari and Chrome */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* Internet Explorer/Edge */
-  user-select: none;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    color: var(--text);
+    font-family: "Syne", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    margin-top: -0.5vh;
+    margin-bottom: 1.5rem;
+    display: flex;
+
+    -webkit-user-select: none;
+    /* Safari and Chrome */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
 }
 
 #btnMain {
-  width: 100%;
-  padding: 4px;
-  display: inline-flex;
-  border-style: none;
-  background-color: var(--icon);
-  border-color: var(--border);
-  border-radius: 12px;
-  transition: transform 0.15s ;
+    width: 100%;
+    padding: 4px;
+    display: inline-flex;
+    border-style: none;
+    background-color: var(--icon);
+    border-color: var(--border);
+    border-radius: 12px;
+    transition: transform 0.15s;
 }
 
 #btnMain .theme-label {
-  font-family: "Space Grotesk", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  
-  align-items: center;
-  max-width: 100%;
-  min-width: 69px;
-  padding: 4px;
-  border-style: solid;
-  background-color: var(--icon-bg);
-  color: var(--icon-text);
-  border-color: var(--border);
-  display: flex;
-  font-size: 16px;
-  border-radius: 12px;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+
+    align-items: center;
+    max-width: 100%;
+    min-width: 69px;
+    padding: 4px;
+    border-style: solid;
+    background-color: var(--icon-bg);
+    color: var(--icon-text);
+    border-color: var(--border);
+    display: flex;
+    font-size: 16px;
+    border-radius: 12px;
 }
 
 .btn-icon {
-  margin: auto 0 auto auto;
-  justify-content: flex-end;
-  background-color: var(--icon);
-  border-color: var(--border);
-  box-sizing: border-box;
+    margin: auto 0 auto auto;
+    justify-content: flex-end;
+    background-color: var(--icon);
+    border-color: var(--border);
+    box-sizing: border-box;
 }
 
-.icon-moon {display: none;}
-.icon-sun {display: block; fill: currentColor; color: var(--icon-sun);}
-.dark-mode .icon-sun {display: none;}
-.dark-mode .icon-moon {display: block; fill: currentColor; color: var(--icon-moon);}
+.icon-moon {
+    display: none;
+}
+
+.icon-sun {
+    display: block;
+    fill: currentColor;
+    color: var(--icon-sun);
+}
+
+.dark-mode .icon-sun {
+    display: none;
+}
+
+.dark-mode .icon-moon {
+    display: block;
+    fill: currentColor;
+    color: var(--icon-moon);
+}
 
 .profile-image {
-  width: 80%;
-  margin: 0 auto 1.5rem auto;
-  border: 4px solid var(--border);
-  border-radius: 12px;
-  box-sizing: border-box;
-  transition: transform 0.15s, box-shadow 0.15s ease-in-out;
+    width: 80%;
+    margin: 0 auto 1.5rem auto;
+    border: 4px solid var(--border);
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: transform 0.15s, box-shadow 0.15s ease-in-out;
 }
- 
+
 .section-title {
-  font-family: "Space Grotesk", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-size: 18px;
-  border: 3px solid var(--border);
-  border-radius: 12px;
-  box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 18px;
+    border: 3px solid var(--border);
+    border-radius: 12px;
+    box-sizing: border-box;
 }
 
 
-.section-biodata, .section-contact  {
-  border: 3px solid var(--border);
-  border-radius: 12px;
-  text-align:justify;
-  box-sizing: border-box;
+.section-biodata,
+.section-contact {
+    border: 3px solid var(--border);
+    border-radius: 12px;
+    text-align: justify;
+    box-sizing: border-box;
 }
 
-.biodata-title {background-color: var(--accent-green);}
-.contact-title {background-color: var(--accent-pink);}
-.portfolio-title {background-color: var(--accent-yellow); margin-bottom: 18px;}
-.social-media-title {background-color: var(--accent-blue); margin-top: 18px;}
+.biodata-title {
+    background-color: var(--accent-green);
+}
+
+.contact-title {
+    background-color: var(--accent-pink);
+}
+
+.portfolio-title {
+    background-color: var(--accent-yellow);
+    margin-bottom: 18px;
+}
+
+.social-media-title {
+    background-color: var(--accent-blue);
+    margin-top: 18px;
+}
 
 a {
-  text-decoration: none;
-  color: var(--border);
-  transition: transform 0.15s ease-in-out ;
-  display: inline-block;
+    text-decoration: none;
+    color: var(--border);
+    transition: transform 0.15s ease-in-out;
+    display: inline-block;
 }
 
 a:hover {
- transform: translate(-2px, -2px);
- color:var(--accent-pink)
+    transform: translate(-2px, -2px);
+    color: var(--accent-pink)
 }
-
 
 .portfolio-link {
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 800;
-  border: 3px solid var(--border);
-  border-radius: 12px;
-  font-size: 16px;
-  padding: 6px 8px;
-  transition: transform 0.1s, box-shadow 0.15s, background-color 0.1s;
-  
-  -webkit-user-drag: none; /* Safari and Chrome */
-  -moz-user-drag: none;    /* Firefox */
-  -ms-user-drag: none;     /* Internet Explorer/Edge */
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 800;
+    border: 3px solid var(--border);
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 6px 8px;
+    transition: transform 0.1s, box-shadow 0.15s, background-color 0.1s;
+
+    -webkit-user-drag: none;
+    /* Safari and Chrome */
+    -moz-user-drag: none;
+    /* Firefox */
+    -ms-user-drag: none;
+    /* Internet Explorer/Edge */
 }
 
-.portfolio-link:visited{
-  transform: translate(0px, 0px);
-  border:3px solid var(--border);
+.portfolio-link:visited {
+    transform: translate(0px, 0px);
+    border: 3px solid var(--border);
 }
 
-.portfolio-link:hover{
-  background-color: var(--accent-yellow);
-  transform: translate(-2px, -2px);
-  border:3px solid var(--accent-pink);
+.portfolio-link:hover {
+    background-color: var(--accent-yellow);
+    transform: translate(-2px, -2px);
+    border: 3px solid var(--accent-pink);
 }
-
 
 p {
-  color: var(--text);
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 640;
-  font-style: normal;
-  font-size: 14px;
-  padding: 6px;
-  margin-bottom: 6px;
-  margin-top: 6px;
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 640;
+    font-style: normal;
+    font-size: 14px;
+    padding: 6px;
+    margin-bottom: 6px;
+    margin-top: 6px;
 }
 
 .icon {
-  display: inline-flex;
-  margin-top: 12px;
-  width: 48px;
-  transition: transform 0.15s ease-in-out, color 0.15s ease;
-  fill: currentColor;
-  color: var(--bg)
+    display: inline-flex;
+    margin-top: 12px;
+    width: 48px;
+    transition: transform 0.15s ease-in-out, color 0.15s ease;
+    fill: currentColor;
+    color: var(--bg)
 }
 
 .icon:hover {
-  transform: translate(-2px, -2px);
-  fill: currentColor;
-  color:var(--accent-pink)
+    transform: translate(-2px, -2px);
+    fill: currentColor;
+    color: var(--accent-pink)
 }
 
 .behance {
-  margin-left: 6px;
+    margin-left: 6px;
 }
 
 /*Media Query*/
 
-/* 1. Standard Landscape (Tablet): Safe 80% baseline */
-@media (min-width: 768px) {  
-  .business-card {
-    flex: 0 0 auto;
-    padding: 1.8rem;
-  }
+/* --Standard Landscape (Tablet): Safe 80% baseline */
+@media (min-width: 768px) {
+    .business-card {
+        flex: 0 0 auto;
+        padding: 1.8rem;
+    }
 
-  .portfolio-link {
-    font-size: 16px;
-  }
+    .portfolio-link {
+        font-size: 16px;
+    }
 
-  .section-title {
-    font-size: 24px;
-  }
+    .section-title {
+        font-size: 24px;
+    }
 
-  .icon {
-    margin-bottom: -8px;
-  }
-  
-  p {
-    font-size: 14px;
-  }
+    .icon {
+        margin-bottom: -8px;
+    }
+
+    p {
+        font-size: 14px;
+    }
 }
 
-@media (min-width: 1200px) and (orientation: portrait){ 
-  html {
-    flex: 0 0 auto;
-    padding: 1.4rem;
-  } 
+@media (min-width: 1200px) and (orientation: portrait) {
+    html {
+        flex: 0 0 auto;
+        padding: 1.4rem;
+    }
 
-   .business-card {
-    max-width: 480px;  
-    width: 90%;
-  }
+    .business-card {
+        max-width: 480px;
+        width: 90%;
+    }
 
-  .header {
-    font-size: 32px;
-  }
-  .portfolio-link {
-    font-size: 20px;
-  }
+    .header {
+        font-size: 32px;
+    }
 
-  .section-title {
-    font-size: 24px;
-  }
-  
-  p {
-    font-size: 18px;
-  }
+    .portfolio-link {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
 }
 
-/* 2. Standard Landscape (Dekstop): Safe 80% baseline */
-@media (min-width: 1200px) and (orientation: landscape) { 
-  html {
-    flex: 0 0 auto;
-    padding: 1.4rem;
-  } 
+/* --Standard Landscape (Dekstop): Safe 80% baseline */
+@media (min-width: 1200px) and (orientation: landscape) {
+    html {
+        flex: 0 0 auto;
+        padding: 1.4rem;
+    }
 
-   .business-card {
-    max-width: 480px;  
-  }
+    .business-card {
+        max-width: 480px;
+    }
 
-  .header {
-    font-size: 32px;
-  }
-  .portfolio-link {
-    font-size: 20px;
-  }
+    .header {
+        font-size: 32px;
+    }
 
-  .section-title {
-    font-size: 24px;
-  }
-  
-  p {
-    font-size: 18px;
-  }
+    .portfolio-link {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
 }
