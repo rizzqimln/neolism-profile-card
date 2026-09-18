@@ -291,9 +291,17 @@ p {
     color: var(--accent-pink)
 }
 
-.behance {
+#whatsapp-icon, #instagram-icon, #github-icon, #linkedin-icon, #behance-icon {
     margin-left: 6px;
 }
+
+#whatsapp-icon {
+
+    margin-bottom: 0.1px;
+    height: auto;
+    width: 36px;
+}
+
 
 /*Media Query*/
 
