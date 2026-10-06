@@ -276,6 +276,10 @@ p {
     margin-top: 6px;
 }
 
+.social-media-entry {
+    box-sizing: border-box;
+}
+
 .icon {
     display: inline-flex;
     margin-top: 12px;
@@ -297,8 +301,7 @@ p {
 
 #whatsapp-icon {
 
-    margin-bottom: 0.1px;
-    height: auto;
+    margin-bottom: auto;
     width: 36px;
 }
 
