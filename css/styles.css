@@ -197,7 +197,6 @@ body {
     box-sizing: border-box;
 }
 
-
 .section-biodata,
 .section-contact {
     border: 3px solid var(--border);
@@ -276,6 +275,12 @@ p {
     margin-top: 6px;
 }
 
+.social-media-container {
+    display: grid;
+    gap: 10px;
+    
+}
+
 .social-media-entry {
     box-sizing: border-box;
 }
@@ -294,17 +299,6 @@ p {
     fill: currentColor;
     color: var(--accent-pink)
 }
-
-#whatsapp-icon, #instagram-icon, #github-icon, #linkedin-icon, #behance-icon {
-    margin-left: 6px;
-}
-
-#whatsapp-icon {
-
-    margin-bottom: auto;
-    width: 36px;
-}
-
 
 /*Media Query*/
 
@@ -326,7 +320,7 @@ p {
     .icon {
         margin-bottom: -8px;
     }
-
+    
     p {
         font-size: 14px;
     }
