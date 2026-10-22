@@ -285,13 +285,17 @@ p {
     box-sizing: border-box;
 }
 
+.behance {
+    margin-left: 8px;
+}
+
 .icon {
     display: inline-flex;
     margin-top: 12px;
     width: 48px;
     transition: transform 0.15s ease-in-out, color 0.15s ease;
     fill: currentColor;
-    color: var(--bg)
+    color: var(--bg);
 }
 
 .icon:hover {
